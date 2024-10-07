@@ -1,10 +1,8 @@
-import React, { useRef } from "react";
+import React from "react";
 import { Image, StyleSheet, View } from "react-native";
 import Carousel from "react-native-snap-carousel";
 
 export const CarouselComponent = ({ images }: { images: string[] }) => {
-  const carouselRef = useRef(null);
-
   const renderItem = ({ item }: { item: string }) => {
     return (
       <View style={styles.slide}>
@@ -15,14 +13,13 @@ export const CarouselComponent = ({ images }: { images: string[] }) => {
 
   return (
     <Carousel
-      ref={carouselRef}
-      data={images}  
+      data={images}
       renderItem={renderItem}
-      sliderWidth={200}  
-      itemWidth={200}    
-      autoplay={true}    
-      loop={true}        
-      autoplayInterval={3000} 
+      sliderWidth={200}
+      itemWidth={200}
+      autoplay={true}
+      loop={true}
+      autoplayInterval={3000}
     />
   );
 };
@@ -33,8 +30,8 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   image: {
-    width: 200,  
-    height: 200,  
+    width: 200,
+    height: 200,
     resizeMode: "cover",
   },
 });

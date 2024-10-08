@@ -6,20 +6,21 @@ import { CarouselComponent } from "@/components/Carousel";
 export default function HomeScreen() {
   const [images, setImages] = useState<string[]>([]);
   const title = images.length
-    ? "Pick another image to add to the carousel"
-    : "Pick an image from camera roll for the carousel";
+    ? "Pick some more images to add to the carousel"
+    : "Pick images from camera roll for the carousel";
 
   const pickImage = async () => {
     try {
       let result = await ImagePicker.launchImageLibraryAsync({
-        allowsEditing: true,
+        allowsMultipleSelection: true,
         quality: 1,
       });
 
       // @ts-ignore
       if (!result.canceled) { 
         // @ts-ignore
-        setImages([...images, result.assets[0].uri.toString()]);
+        const uris = result.assets.map((asset: any) => asset.uri.toString());
+        setImages([...images, ...uris]);
       }
     } catch (error) {
       console.log(error);

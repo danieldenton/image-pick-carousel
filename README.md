@@ -10,25 +10,7 @@ This is an [Expo](https://expo.dev) project created with [`create-expo-app`](htt
    yarn install
    ```
 
-2. From node_modules/react-native-snap-carousel/src/carousel/Carousel.js comment out the following:
-   46. // containerCustomStyle: ViewPropTypes ? ViewPropTypes.style : View.propTypes.style,
-   47. // contentContainerCustomStyle: ViewPropTypes ? ViewPropTypes.style : View.propTypes.style,
-   64. // slideStyle: ViewPropTypes ? ViewPropTypes.style : View.propTypes.style,
-
-   From node_modules/react-native-snap-carousel/src/pagination/PaginationDot.js comment out the following:
-   15. // containerStyle: ViewPropTypes ? ViewPropTypes.style : View.propTypes.style,
-   17. // inactiveStyle: ViewPropTypes ? ViewPropTypes.style : View.propTypes.style,
-   19. // style: ViewPropTypes ? ViewPropTypes.style : View.propTypes.style,
-
-   From node_modules/react-native-snap-carousel/src/pagination/Pagination.js comment out the following:
-   17. // containerStyle: ViewPropTypes ? ViewPropTypes.style : View.propTypes.style,
-   19. // dotContainerStyle: ViewPropTypes ? ViewPropTypes.style : View.propTypes.style,
-   21. // dotStyle: ViewPropTypes ? ViewPropTypes.style : View.propTypes.style,
-   26. // inactiveDotStyle: ViewPropTypes ? ViewPropTypes.style : View.propTypes.style,
-
-    From node_modules/react-native-snap-carousel/src/parallaximage/ParallaxImage.js comment out the following:
-    19.  // containerStyle: ViewPropTypes ? ViewPropTypes.style : View.propTypes.style,
-
+2. Replace the react-native-snap-carousel directory in the node_modules with the react-native-snap-carousel in the root directory of the project as some files have been edited to be compatible with this application.
 
 3. Start the app
 

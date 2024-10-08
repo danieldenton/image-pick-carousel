@@ -7,10 +7,30 @@ This is an [Expo](https://expo.dev) project created with [`create-expo-app`](htt
 1. Install dependencies
 
    ```bash
-   npm install
+   yarn install
    ```
 
-2. Start the app
+2. From node_modules/react-native-snap-carousel/src/carousel/Carousel.js comment out the following:
+   46. // containerCustomStyle: ViewPropTypes ? ViewPropTypes.style : View.propTypes.style,
+   47. // contentContainerCustomStyle: ViewPropTypes ? ViewPropTypes.style : View.propTypes.style,
+   64. // slideStyle: ViewPropTypes ? ViewPropTypes.style : View.propTypes.style,
+
+   From node_modules/react-native-snap-carousel/src/pagination/PaginationDot.js comment out the following:
+   15. // containerStyle: ViewPropTypes ? ViewPropTypes.style : View.propTypes.style,
+   17. // inactiveStyle: ViewPropTypes ? ViewPropTypes.style : View.propTypes.style,
+   19. // style: ViewPropTypes ? ViewPropTypes.style : View.propTypes.style,
+
+   From node_modules/react-native-snap-carousel/src/pagination/Pagination.js comment out the following:
+   17. // containerStyle: ViewPropTypes ? ViewPropTypes.style : View.propTypes.style,
+   19. // dotContainerStyle: ViewPropTypes ? ViewPropTypes.style : View.propTypes.style,
+   21. // dotStyle: ViewPropTypes ? ViewPropTypes.style : View.propTypes.style,
+   26. // inactiveDotStyle: ViewPropTypes ? ViewPropTypes.style : View.propTypes.style,
+
+    From node_modules/react-native-snap-carousel/src/parallaximage/ParallaxImage.js comment out the following:
+    19.  // containerStyle: ViewPropTypes ? ViewPropTypes.style : View.propTypes.style,
+
+
+3. Start the app
 
    ```bash
     npx expo start

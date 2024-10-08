@@ -17,7 +17,8 @@ export default function HomeScreen() {
       });
 
       // @ts-ignore
-      if (!result.canceled) { // @ts-ignore
+      if (!result.canceled) { 
+        // @ts-ignore
         setImages([...images, result.assets[0].uri.toString()]);
       }
     } catch (error) {

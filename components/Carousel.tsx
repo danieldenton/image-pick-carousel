@@ -1,35 +1,32 @@
-import React, { useEffect, useRef, useState } from "react";
 import { StatusBar } from "expo-status-bar";
-import { Image, StyleSheet, View } from "react-native";
+import { StyleSheet, View } from "react-native";
 import Animated, {
   useAnimatedScrollHandler,
-  useScrollViewOffset,
   useSharedValue,
 } from "react-native-reanimated";
 import { CarouseImage } from "./CarouseImage";
 
 export const CarouselComponent = ({ images }: { images: string[] }) => {
-    const scrollX = useSharedValue(0);
-    const onScrollHandler = useAnimatedScrollHandler((event) => {
-      scrollX.value = event.contentOffset.x;
-    });
-
-  const items = images.map((image, index) => {
-   return { id: index.toString(), img: { uri: image } };
+  const scrollX = useSharedValue(0);
+  const onScrollHandler = useAnimatedScrollHandler((event) => {
+    scrollX.value = event.contentOffset.x;
   });
 
+  const items = images.map((image, index) => {
+    return { id: index.toString(), img: { uri: image } };
+  });
 
   return (
     <View style={styles.container}>
-     <StatusBar style="auto" />
+      <StatusBar style="auto" />
       <Animated.FlatList
         horizontal
         onScroll={onScrollHandler}
         data={items}
         pagingEnabled={true}
         renderItem={({ item, index }) => {
-            return <CarouseImage item={item} index={index} scrollX={scrollX} />;
-          }}
+          return <CarouseImage item={item} index={index} scrollX={scrollX} />;
+        }}
       />
     </View>
   );

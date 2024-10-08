@@ -1,9 +1,9 @@
-import { Dimensions, Image, StyleSheet, Text, View } from 'react-native';
-import React from 'react';
+import { Dimensions, Image, StyleSheet, Text, View } from "react-native";
+import React from "react";
 import Animated, {
   interpolate,
   useAnimatedStyle,
-} from 'react-native-reanimated';
+} from "react-native-reanimated";
 
 type Props = {
   item: {
@@ -13,7 +13,7 @@ type Props = {
   index: number;
   scrollX: Animated.SharedValue<number>;
 };
-const { width } = Dimensions.get('window');
+const { width } = Dimensions.get("window");
 
 export const CarouseImage = ({ item, index, scrollX }: Props) => {
   const rnStyle = useAnimatedStyle(() => {
@@ -25,7 +25,7 @@ export const CarouseImage = ({ item, index, scrollX }: Props) => {
             scrollX.value,
             [(index - 1) * width, index * width, (index + 1) * width],
             [-width * 0.15, 0, width * 0.15],
-            'clamp'
+            "clamp"
           ),
         },
         {
@@ -33,7 +33,7 @@ export const CarouseImage = ({ item, index, scrollX }: Props) => {
             scrollX.value,
             [(index - 1) * width, index * width, (index + 1) * width],
             [0.9, 1, 0.9],
-            'clamp'
+            "clamp"
           ),
         },
       ],
@@ -42,7 +42,7 @@ export const CarouseImage = ({ item, index, scrollX }: Props) => {
   return (
     <Animated.View
       style={[
-        { width, height: 250, justifyContent: 'center', alignItems: 'center' },
+        { width, height: 250, justifyContent: "center", alignItems: "center" },
         rnStyle,
       ]}
       key={item.id}
@@ -50,12 +50,11 @@ export const CarouseImage = ({ item, index, scrollX }: Props) => {
       <Image
         source={item.img}
         style={{
-          width: '85%',
-          height: '100%',
+          width: "85%",
+          height: "100%",
         }}
         resizeMode="cover"
       />
-      <Text>{item.title}</Text>
     </Animated.View>
   );
 };

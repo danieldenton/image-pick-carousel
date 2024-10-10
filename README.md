@@ -7,10 +7,8 @@ This is an [Expo](https://expo.dev) project created with [`create-expo-app`](htt
 1. Install dependencies
 
    ```bash
-   yarn install
+   yarn 
    ```
-
-2. Replace the react-native-snap-carousel directory in the node_modules with the react-native-snap-carousel in the root directory of the project as some files have been edited to be compatible with this application.
 
 3. Start the app
 
